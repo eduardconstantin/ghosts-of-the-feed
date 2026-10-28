@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ghosts of the Feed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,440;0,9..144,640;1,9..144,440&family=Outfit:wght@380;500;640&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="papel" aria-hidden="true"></div>
+    <main class="altar">
+      <header class="mast">
+        <div class="mast-halo" aria-hidden="true"></div>
+        <div class="crest">
+          <span class="crest-line" aria-hidden="true"></span>
+          <p class="eyebrow">Día de los Muertos · Ghost in the Machine</p>
+          <span class="crest-line" aria-hidden="true"></span>
+        </div>
+        <h1>Ghosts of the Feed</h1>
+        <p class="lede">
+          Every bookmark is a voice you saved and never answered. Light a candle
+          for one — <em>Gemma</em> writes what it still wants, <em>ElevenLabs</em>
+          speaks it aloud, and <em>Tiger Data</em> carves its memory into stone.
+        </p>
+        <div class="sponsor-pills" aria-label="Powered by">
+          <span class="pill"><span class="pill-dot"></span><b>Gemma 3 270M</b> · in-browser ONNX</span>
+          <span class="pill"><span class="pill-dot"></span><b>ElevenLabs</b> · neural voice</span>
+          <span class="pill" id="tiger-pill"><span class="pill-dot"></span><b>Tiger Data</b> · TimescaleDB + pgvector + BM25</span>
+        </div>
+      </header>
+
+      <section id="seance" class="retablo">
+        <div class="niche">
+          <span class="retablo-arch" aria-hidden="true"></span>
+
+          <div class="portrait">
+            <div class="portrait-head">
+              <div class="votive-hero">
+                <span id="seance-seal" class="seal-lg" aria-hidden="true">J</span>
+                <span class="candle-inline" aria-hidden="true">
+                  <span class="flame"></span>
+                  <span class="wax"></span>
+                </span>
+              </div>
+              <div>
+                <p class="eyebrow">The Unfinished Post · At the Altar</p>
+                <h2 id="seance-title">Choose a ghost below</h2>
+                <p id="seance-meta" class="meta">1,832 voices waiting in the dark</p>
+              </div>
+            </div>
+
+            <blockquote id="seance-words">
+              Pick any offering card from the shelf. The oldest has been waiting
+              eight years.
+            </blockquote>
+
+            <div class="seance-actions">
+              <button id="summon" type="button" disabled>
+                <span class="btn-spark" aria-hidden="true">✦</span>
+                Summon this ghost
+              </button>
+              <button id="hear" type="button" class="ghost-btn" disabled>Speak again</button>
+              <a id="source" class="ghost-btn" href="" target="_blank" rel="noreferrer" hidden>Original post ↗</a>
+            </div>
+          </div>
+
+          <div class="altar-divider" aria-hidden="true">
+            <span class="divider-line"></span>
+            <span class="divider-marigold">❖</span>
+            <span class="divider-line"></span>
+          </div>
+
+          <div class="oracle" aria-live="polite">
+            <div>
+              <div class="oracle-head">
+                <p class="eyebrow">The Spirit Speaks Back</p>
+                <span id="rest-badge" class="rest-badge" hidden>Put to Rest in Tiger Data</span>
+              </div>
+              <p id="speech" class="speech">
+                When you summon, Gemma 3 270M speaks in the first person as that
+                saved post, ElevenLabs carries the voice into the room, and Tiger
+                Data records the epitaph in a TimescaleDB hypertable.
+              </p>
+            </div>
+            <div class="oracle-foot">
+              <span class="oracle-sigil" aria-hidden="true">🕯️</span>
+              <p id="status" class="status">
+                Gemma runs in this browser. Bookmarks &amp; vectors indexed in Tiger Data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tiger-chronicle" aria-label="Tiger Data Graveyard Telemetry">
+        <div class="chronicle-card">
+          <div class="chronicle-head">
+            <div>
+              <p class="eyebrow">Tiger Data · Continuous Aggregate (`time_bucket`)</p>
+              <h3>Timeline of the Unanswered (2018 – 2026)</h3>
+            </div>
+            <button id="clear-year" class="ghost-btn sm" type="button" hidden>All years</button>
+          </div>
+          <div id="timeline-bars" class="timeline-bars" role="list"></div>
+        </div>
+
+        <div class="chronicle-card">
+          <div class="chronicle-head">
+            <div>
+              <p class="eyebrow">Tiger Data · `seance_rituals` Hypertable</p>
+              <h3>Recent Séance Log</h3>
+            </div>
+            <span id="rested-counter" class="rested-counter">1 put to rest</span>
+          </div>
+          <ul id="ritual-list" class="ritual-list"></ul>
+        </div>
+      </section>
+
+      <section class="ofrenda" aria-label="The offerings">
+        <div class="shelf-bar">
+          <div>
+            <p id="count" class="count">Loading the ofrenda…</p>
+            <p id="search-caption" class="search-caption">
+              Hybrid RRF search enabled (`pgvector` HNSW cosine + `pg_textsearch` BM25)
+            </p>
+          </div>
+          <div class="controls">
+            <input
+              id="query"
+              type="search"
+              aria-label="Semantic or keyword search"
+              placeholder="Summon by mood or keyword (e.g. lonely shader water, retro pixel art)…"
+            />
+            <select id="filter-state" aria-label="Soul state">
+              <option value="all">All souls</option>
+              <option value="unanswered">Unanswered only</option>
+              <option value="rested">Put to rest (epitaphs)</option>
+            </select>
+            <select id="order" aria-label="Order">
+              <option value="oldest">Longest waiting</option>
+              <option value="newest">Most recently spoken</option>
+              <option value="loved">Most loved</option>
+            </select>
+            <label class="upload">
+              <span>Load another export</span>
+              <input id="file" type="file" accept="application/json,.json" hidden />
+            </label>
+          </div>
+        </div>
+
+        <div id="grid" class="grid"></div>
+        <button id="more" class="more" type="button" hidden>Place 36 more offerings on the shelf</button>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

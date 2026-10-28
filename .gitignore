@@ -1,0 +1,8 @@
+node_modules
+dist
+public/bookmarks.json
+sample-codes.txt
+scripts/seed-tiger.sql
+.env
+.env.*
+!.env.example
