@@ -3,9 +3,12 @@ title: "Ghosts of the Feed: A Día de los Muertos Ofrenda for Forgotten Bookmark
 published: false
 description: "Turning 8 years of unanswered X bookmarks into candlelit spirits that speak back — using in-browser Gemma 3 270M ONNX, ElevenLabs neural voice, and Tiger Data hypertables + pgvector hybrid search."
 tags: hf26challenge, devchallenge, ai, opensource
+cover_image: https://raw.githubusercontent.com/eduardconstantin/ghosts-of-the-feed/main/docs/screenshots/altar-shrine.png
 ---
 
 *This is a submission for the [Hacktoberfest Open-Source AI Challenge: Week 4](https://dev.to/challenges/hacktoberfest-week4-2026-10-26).*
+
+![Ghosts of the Feed — Día de los Muertos Altar Shrine](https://raw.githubusercontent.com/eduardconstantin/ghosts-of-the-feed/main/docs/screenshots/altar-shrine.png)
 
 ## What I Built: Ghosts of the Feed 🕯️🌼
 
@@ -24,7 +27,18 @@ Instead of a cold productivity dashboard, **Ghosts of the Feed** treats every sa
 
 ## Demo & Repository 🔗
 
-- **GitHub Repository (MIT Licensed)**: `https://github.com/eduardconstantin/ghosts-of-the-feed`
+- **GitHub Repository (MIT Licensed)**: [https://github.com/eduardconstantin/ghosts-of-the-feed](https://github.com/eduardconstantin/ghosts-of-the-feed)
+
+### App Walkthrough Screenshots
+
+#### 1. The Candlelit Altar Shrine (`Gemma 3 270M` in-browser ONNX + `ElevenLabs` voice)
+![Ghosts of the Feed — Altar Shrine](https://raw.githubusercontent.com/eduardconstantin/ghosts-of-the-feed/main/docs/screenshots/altar-shrine.png)
+
+#### 2. The Ofrenda Shelf & Timeline of the Unanswered (`TimescaleDB` Continuous Aggregate + `seance_rituals` Hypertable)
+![Ghosts of the Feed — Ofrenda Cards & Timeline](https://raw.githubusercontent.com/eduardconstantin/ghosts-of-the-feed/main/docs/screenshots/ofrenda-shelf.png)
+
+#### 3. Hybrid Semantic + Keyword Search (`pgvector` HNSW Cosine + `pg_textsearch` BM25 via Reciprocal Rank Fusion)
+![Ghosts of the Feed — Tiger Data Hybrid RRF Search](https://raw.githubusercontent.com/eduardconstantin/ghosts-of-the-feed/main/docs/screenshots/tiger-hybrid-search.png)
 
 ### How Judges Can Test in 60 Seconds (No Login or API Keys Required)
 

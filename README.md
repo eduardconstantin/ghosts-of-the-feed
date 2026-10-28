@@ -4,6 +4,21 @@
 
 Built for the **[Hacktoberfest 2026 Open-Source AI Challenge: Week 4 ("Ghost in the Machine")](https://dev.to/challenges/hacktoberfest-week4-2026-10-26)**.
 
+![Ghosts of the Feed — Candlelit Altar Shrine](./docs/screenshots/altar-shrine.png)
+
+---
+
+## Screenshots
+
+### 1. The Altar Shrine (`Gemma 3 270M` + `ElevenLabs` + `Tiger Data`)
+![Ghosts of the Feed Altar Shrine](./docs/screenshots/altar-shrine.png)
+
+### 2. The Ofrenda Shelf & Timeline of the Unanswered (`TimescaleDB` Continuous Aggregate)
+![Ghosts of the Feed Ofrenda Shelf](./docs/screenshots/ofrenda-shelf.png)
+
+### 3. Hybrid Semantic + Keyword Search (`pgvector` HNSW Cosine + `pg_textsearch` BM25 RRF)
+![Tiger Data Hybrid RRF Search](./docs/screenshots/tiger-hybrid-search.png)
+
 ---
 
 ## Why We Built It
